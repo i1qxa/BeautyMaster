@@ -1,4 +1,4 @@
-package com.example.beautymaster.domain.serviceList
+package com.example.beautymaster.domain.service
 
 import kotlinx.coroutines.flow.Flow
 
@@ -7,8 +7,6 @@ interface ServiceRepository {
     suspend fun getServiceItemList():Flow<List<ServiceItem>>
 
     suspend fun getServiceItem(id:Int):ServiceItem
-
-    suspend fun getServiceItemWithMaterialItems(serviceItemId:Int):ServiceItemWithMaterialItems
 
     suspend fun addServiceItem(serviceItem: ServiceItem)
 

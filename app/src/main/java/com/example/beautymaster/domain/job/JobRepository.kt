@@ -8,8 +8,6 @@ interface JobRepository {
 
     suspend fun getJobListInDateRange(dateStart:String, dateEnd:String):Flow<List<JobItem>>
 
-    suspend fun getJobItemWithCustomerAndService(jobItemId:Int):JobItemWithCustomerAndService
-
     suspend fun getJobItem(id:Int):JobItem
 
     suspend fun addJobItem(jobItem:JobItem)
