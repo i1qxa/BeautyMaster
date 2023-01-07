@@ -10,8 +10,8 @@ import com.example.beautymaster.data.job.JobItemDBModel
 import com.example.beautymaster.data.job.JobItemDBModelDao
 import com.example.beautymaster.data.materials.MaterialItemDBModel
 import com.example.beautymaster.data.materials.MaterialItemDBModelDao
-import com.example.beautymaster.data.priceRegisterMaterial.MaterialPriceRegisterDao
-import com.example.beautymaster.data.priceRegisterMaterial.MaterialPriceRegisterItemDBModel
+import com.example.beautymaster.data.priceRegister.PriceRegisterDao
+import com.example.beautymaster.data.priceRegister.PriceRegisterItemDBModel
 import com.example.beautymaster.data.priceRegisterService.PriceRegisterServiceDAO
 import com.example.beautymaster.data.priceRegisterService.PriceRegisterServiceItemDBModel
 import com.example.beautymaster.data.service.ServiceItemDBModel
@@ -24,7 +24,7 @@ import kotlinx.coroutines.internal.synchronized
         CustomerItemDBModel::class,
         JobItemDBModel::class,
         MaterialItemDBModel::class,
-        MaterialPriceRegisterItemDBModel::class,
+        PriceRegisterItemDBModel::class,
         PriceRegisterServiceItemDBModel::class,
         ServiceItemDBModel::class
     ],
@@ -35,7 +35,7 @@ abstract class AppDatabase:RoomDatabase() {
     abstract fun customerItemDBModelDao():CustomerItemDBModelDao
     abstract fun jobItemDBModelDao():JobItemDBModelDao
     abstract fun materialItemDBModelDao():MaterialItemDBModelDao
-    abstract fun materialPriceRegisterDao():MaterialPriceRegisterDao
+    abstract fun materialPriceRegisterDao():PriceRegisterDao
     abstract fun priceRegisterServiceDao():PriceRegisterServiceDAO
     abstract fun serviceItemDBModelDao():ServiceItemDBModelDao
 

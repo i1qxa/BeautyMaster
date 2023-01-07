@@ -1,4 +1,4 @@
-package com.example.beautymaster.domain.priceRegisterMaterial
+package com.example.beautymaster.domain.priceRegister
 
 import com.example.beautymaster.domain.jobBody.JobBodyElement
 

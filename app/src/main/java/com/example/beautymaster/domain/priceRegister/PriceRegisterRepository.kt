@@ -1,8 +1,7 @@
-package com.example.beautymaster.domain.priceRegisterMaterial
+package com.example.beautymaster.domain.priceRegister
 
 import androidx.lifecycle.LiveData
 import com.example.beautymaster.domain.jobBody.JobBodyElement
-import com.example.beautymaster.domain.materials.MaterialItem
 
 interface PriceRegisterRepository {
 
