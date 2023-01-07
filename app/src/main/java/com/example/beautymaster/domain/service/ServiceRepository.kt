@@ -1,10 +1,10 @@
 package com.example.beautymaster.domain.service
 
-import kotlinx.coroutines.flow.Flow
+import androidx.lifecycle.LiveData
 
 interface ServiceRepository {
 
-    suspend fun getServiceItemList():Flow<List<ServiceItem>>
+    suspend fun getServiceItemList():LiveData<List<ServiceItem>>
 
     suspend fun getServiceItem(id:Int):ServiceItem
 

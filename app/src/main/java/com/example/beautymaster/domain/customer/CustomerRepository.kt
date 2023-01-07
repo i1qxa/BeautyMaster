@@ -1,10 +1,10 @@
 package com.example.beautymaster.domain.customer
 
-import kotlinx.coroutines.flow.Flow
+import androidx.lifecycle.LiveData
 
 interface CustomerRepository {
 
-    suspend fun getCustomerList(): Flow<List<CustomerItem>>
+    suspend fun getCustomerList(): LiveData<List<CustomerItem>>
 
     suspend fun getCustomerItem(id: Int): CustomerItem
 

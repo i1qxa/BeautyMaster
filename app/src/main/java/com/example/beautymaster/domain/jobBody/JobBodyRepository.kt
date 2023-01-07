@@ -1,0 +1,15 @@
+package com.example.beautymaster.domain.jobBody
+
+import androidx.lifecycle.LiveData
+
+interface JobBodyRepository {
+
+    suspend fun getJobBodyList(jodId:Int):LiveData<List<JobBodyItem>>
+
+    suspend fun addJobBodyItem(item:JobBodyItem)
+
+    suspend fun deleteJobBodyItem(itemId:Int)
+
+    suspend fun editJobBodyItem(item:JobBodyItem)
+
+}

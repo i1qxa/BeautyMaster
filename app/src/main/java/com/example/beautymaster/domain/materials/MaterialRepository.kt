@@ -1,10 +1,10 @@
 package com.example.beautymaster.domain.materials
 
-import kotlinx.coroutines.flow.Flow
+import androidx.lifecycle.LiveData
 
 interface MaterialRepository {
 
-    suspend fun getMaterialItemList(): Flow<List<MaterialItem>>
+    suspend fun getMaterialItemList(): LiveData<List<MaterialItem>>
 
     suspend fun getMaterialItem(id:Int): MaterialItem
 

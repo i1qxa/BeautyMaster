@@ -1,12 +1,12 @@
 package com.example.beautymaster.domain.job
 
-import kotlinx.coroutines.flow.Flow
+import androidx.lifecycle.LiveData
 
 interface JobRepository {
 
-    suspend fun getJobListForCustomer(customerId:Int):Flow<List<JobItem>>
+    suspend fun getJobListForCustomer(customerId:Int):LiveData<List<JobItem>>
 
-    suspend fun getJobListInDateRange(dateStart:String, dateEnd:String):Flow<List<JobItem>>
+    suspend fun getJobListInDateRange(dateStart:String, dateEnd:String):LiveData<List<JobItem>>
 
     suspend fun getJobItem(id:Int):JobItem
 

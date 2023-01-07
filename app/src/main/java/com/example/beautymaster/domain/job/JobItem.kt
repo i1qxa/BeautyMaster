@@ -7,7 +7,6 @@ data class JobItem(
     val id : Int,
     val date : String,
     val customer : CustomerItem,
-    val serviceList : List<ServiceItem>,
 ){
     //Реализовать подсчет суммы заказа
 }
