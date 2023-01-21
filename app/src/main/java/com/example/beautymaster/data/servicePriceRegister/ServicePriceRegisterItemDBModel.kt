@@ -1,17 +1,17 @@
-package com.example.beautymaster.data.priceRegister
+package com.example.beautymaster.data.servicePriceRegister
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.beautymaster.domain.materials.MaterialItem
+import com.example.beautymaster.data.service.ServiceItemDBModel
 
 @Entity
-data class PriceRegisterItemDBModel(
+data class ServicePriceRegisterItemDBModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo
-    val id:Int,
+    val id:Float,
     @ColumnInfo
-    val materialItem: MaterialItem,
+    val serviceItem:ServiceItemDBModel,
     @ColumnInfo
     val price:Int,
     @ColumnInfo

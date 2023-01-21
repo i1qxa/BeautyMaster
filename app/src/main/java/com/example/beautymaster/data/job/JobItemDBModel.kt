@@ -24,6 +24,4 @@ data class JobItemDBModel(
     val date : String,
     @ColumnInfo
     val customer : CustomerItemDBModel,
-    @ColumnInfo
-    val serviceList : List<ServiceItemDBModel>,
 )

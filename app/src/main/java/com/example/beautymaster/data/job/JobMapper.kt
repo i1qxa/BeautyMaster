@@ -10,7 +10,18 @@ class JobMapper {
             id = jobItem.id,
             date = jobItem.date,
             customer = customerMapper.mapCustomerToDBModel(jobItem.customer),
-
         )
+    }
+    fun mapDBModelToJobItem(jobItemDB:JobItemDBModel):JobItem{
+        return JobItem(
+            id = jobItemDB.id,
+            date = jobItemDB.date,
+            customer = customerMapper.mapDBModelToCustomer(jobItemDB.customer)
+        )
+    }
+    fun mapListDBModelToListJobItem(listDB:List<JobItemDBModel>):List<JobItem>{
+        return listDB.map {
+            mapDBModelToJobItem(it)
+        }
     }
 }
