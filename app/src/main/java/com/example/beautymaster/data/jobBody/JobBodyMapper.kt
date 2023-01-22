@@ -12,8 +12,8 @@ class JobBodyMapper {
         return JobBodyItem(
             id = jobBodyDB.id,
             jobId = jobBodyDB.jobId,
-            materialItem = materialMapper.mapDBModelToMaterialItem(jobBodyDB.materialItem),
-            serviceItem = serviceMapper.mapDBModelToServiceItem(jobBodyDB.serviceItem),
+            materialItem = jobBodyDB.materialItem?.let { materialMapper.mapDBModelToMaterialItem(it) },
+            serviceItem = jobBodyDB.serviceItem?.let { serviceMapper.mapDBModelToServiceItem(it) },
             amount = jobBodyDB.amount,
             price = jobBodyDB.price
         )
@@ -22,8 +22,8 @@ class JobBodyMapper {
         return JobBodyItemDBModel(
             id = jobBody.id,
             jobId = jobBody.jobId,
-            materialItem = materialMapper.mapMaterialItemToDBModel(jobBody.materialItem),
-            serviceItem = serviceMapper.mapServiceItemToDbModel(jobBody.serviceItem),
+            materialItem = jobBody.materialItem?.let { materialMapper.mapMaterialItemToDBModel(it) },
+            serviceItem = jobBody.serviceItem?.let { serviceMapper.mapServiceItemToDbModel(it) },
             amount = jobBody.amount,
             price = jobBody.price
         )

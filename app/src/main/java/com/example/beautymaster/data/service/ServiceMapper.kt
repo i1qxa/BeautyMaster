@@ -5,9 +5,8 @@ import com.example.beautymaster.domain.service.ServiceItem
 
 class ServiceMapper {
     val materialMapper = MaterialMapper()
-    fun mapServiceItemToDbModel(serviceItem: ServiceItem?):ServiceItemDBModel?{
-        return if (serviceItem == null) null
-        else ServiceItemDBModel(
+    fun mapServiceItemToDbModel(serviceItem: ServiceItem):ServiceItemDBModel{
+        return ServiceItemDBModel(
             id = serviceItem.id,
             name = serviceItem.name,
             listMaterials = serviceItem.listMaterials?.map {
@@ -15,9 +14,8 @@ class ServiceMapper {
             }
         )
     }
-    fun mapDBModelToServiceItem(serviceItemDBModel: ServiceItemDBModel?):ServiceItem?{
-        return if (serviceItemDBModel == null) null
-        else ServiceItem(
+    fun mapDBModelToServiceItem(serviceItemDBModel: ServiceItemDBModel):ServiceItem{
+        return ServiceItem(
             id = serviceItemDBModel.id,
             name = serviceItemDBModel.name,
             listMaterials = serviceItemDBModel.listMaterials?.map {
