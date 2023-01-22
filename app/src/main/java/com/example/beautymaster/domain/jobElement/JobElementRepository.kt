@@ -6,6 +6,10 @@ interface JobElementRepository {
 
     suspend fun getJobElementList(): LiveData<List<JobElementItem>>
 
+    suspend fun getServiceList():LiveData<List<JobElementItem>>
+
+    suspend fun getMaterialList():LiveData<List<JobElementItem>>
+
     suspend fun getJobElementItem(id:Int): JobElementItem
 
     suspend fun addJobElementItem(jobElementItem: JobElementItem)

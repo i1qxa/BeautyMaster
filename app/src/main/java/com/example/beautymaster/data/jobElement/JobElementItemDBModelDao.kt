@@ -11,16 +11,22 @@ import com.example.beautymaster.domain.jobElement.JobElementItem
 interface JobElementItemDBModelDao {
 
     @Query("SELECT * FROM JobElementItemDBModel")
-    suspend fun getJobElementItemList(): LiveData<List<JobElementItem>>
+    suspend fun getJobElementItemList(): LiveData<List<JobElementItemDBModel>>
+
+    @Query("SELECT * FROM JobElementItemDBModel WHERE isService = 'true'")
+    suspend fun getServiceList():LiveData<List<JobElementItemDBModel>>
+
+    @Query("SELECT * FROM JobElementItemDBModel WHERE isService = 'false'")
+    suspend fun getMaterialList():LiveData<List<JobElementItemDBModel>>
 
     @Query("SELECT * FROM JobElementItemDBModel WHERE id = :id")
-    suspend fun getJobElementItem(id:Int): JobElementItem
+    suspend fun getJobElementItem(id:Int): JobElementItemDBModel
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addJobElementItem(jobElementItem: JobElementItem)
+    suspend fun addJobElementItem(jobElementItem: JobElementItemDBModel)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun editJobElementItem(jobElementItem: JobElementItem)
+    suspend fun editJobElementItem(jobElementItem: JobElementItemDBModel)
 
     @Query("DELETE FROM JobElementItemDBModel WHERE id = :id")
     suspend fun deleteJobElementItem(id:Int)

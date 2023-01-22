@@ -1,5 +1,6 @@
 package com.example.beautymaster.data.jobBody
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -10,7 +11,7 @@ import com.example.beautymaster.domain.jobBody.JobBodyItem
 @Dao
 interface JobBodyItemDBModelDao {
     @Query("SELECT * FROM jobbodyitemdbmodel WHERE jobId = :jobId")
-    suspend fun getJobBodyList(jobId:Int)
+    suspend fun getJobBodyList(jobId:Int):LiveData<List<JobBodyItemDBModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addJobBodyItem(item: JobBodyItemDBModel)
@@ -19,5 +20,5 @@ interface JobBodyItemDBModelDao {
     suspend fun deleteJobBodyItem(itemId:Int)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun editJobBodyItem(item: JobBodyItem)
+    suspend fun editJobBodyItem(item: JobBodyItemDBModel)
 }

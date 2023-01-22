@@ -32,8 +32,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun customerItemDBModelDao(): CustomerItemDBModelDao
     abstract fun jobItemDBModelDao(): JobItemDBModelDao
     abstract fun jobBodyItemDBModelDao(): JobBodyItemDBModelDao
-    abstract fun materialItemDBModelDao(): JobElementItemDBModelDao
-    abstract fun materialPriceRegisterDao(): JobElementPriceRegisterDao
+    abstract fun jobElementItemDBModelDao(): JobElementItemDBModelDao
+    abstract fun jobElementPriceRegisterDao(): JobElementPriceRegisterDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null

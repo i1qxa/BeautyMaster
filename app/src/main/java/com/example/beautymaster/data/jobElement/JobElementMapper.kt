@@ -3,7 +3,7 @@ package com.example.beautymaster.data.jobElement
 import com.example.beautymaster.domain.jobElement.JobElementItem
 
 class JobElementMapper {
-    fun mapMaterialItemToDBModel(jobElementItem: JobElementItem):JobElementItemDBModel{
+    fun mapJobElementItemToDBModel(jobElementItem: JobElementItem):JobElementItemDBModel{
         return JobElementItemDBModel(
             id = jobElementItem.id,
             name = jobElementItem.name,
@@ -12,7 +12,7 @@ class JobElementMapper {
         )
     }
 
-    fun mapDBModelToMaterialItem(jobElementItemDB: JobElementItemDBModel):JobElementItem{
+    fun mapDBModelToJobElementItem(jobElementItemDB: JobElementItemDBModel):JobElementItem{
         return JobElementItem(
             id = jobElementItemDB.id,
             name = jobElementItemDB.name,
@@ -22,5 +22,5 @@ class JobElementMapper {
     }
 
     fun mapListDBModelToListJobElementItem(listDB:List<JobElementItemDBModel>) =
-        listDB.map { mapDBModelToMaterialItem(it) }
+        listDB.map { mapDBModelToJobElementItem(it) }
 }
