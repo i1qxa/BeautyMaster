@@ -3,7 +3,7 @@ package com.example.beautymaster.data.job
 import com.example.beautymaster.data.customer.CustomerMapper
 import com.example.beautymaster.domain.job.JobItem
 
-class JobMapper {
+class JobItemMapper {
     val customerMapper = CustomerMapper()
     fun mapJobItemToDBModel(jobItem: JobItem):JobItemDBModel{
         return JobItemDBModel(

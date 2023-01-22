@@ -1,5 +1,6 @@
 package com.example.beautymaster.domain.job
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 
 interface JobRepository {
