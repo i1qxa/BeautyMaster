@@ -5,8 +5,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import com.example.beautymaster.data.job.JobItemDBModel
-import com.example.beautymaster.data.materials.MaterialItemDBModel
-import com.example.beautymaster.data.service.ServiceItemDBModel
+import com.example.beautymaster.data.jobElement.JobElementItemDBModel
 
 @Entity(
     foreignKeys = [
@@ -14,7 +13,12 @@ import com.example.beautymaster.data.service.ServiceItemDBModel
             entity = JobItemDBModel::class,
             parentColumns = ["id"],
             childColumns = ["jobId"]
-        )
+        ),
+    ForeignKey(
+        entity = JobElementItemDBModel::class,
+        parentColumns = ["id"],
+        childColumns = ["jobElementId"]
+    )
     ]
 )
 data class JobBodyItemDBModel(
@@ -24,9 +28,7 @@ data class JobBodyItemDBModel(
     @ColumnInfo
     val jobId:Int,
     @ColumnInfo
-    val materialItem: MaterialItemDBModel?,
-    @ColumnInfo
-    val serviceItem:ServiceItemDBModel?,
+    val jobElementId: Int,
     @ColumnInfo
     val amount:Int?,
     @ColumnInfo

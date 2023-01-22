@@ -5,14 +5,13 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import com.example.beautymaster.data.customer.CustomerItemDBModel
-import com.example.beautymaster.data.service.ServiceItemDBModel
 
 @Entity(
     foreignKeys = [
         ForeignKey(
             entity = CustomerItemDBModel::class,
             parentColumns = ["id"],
-            childColumns = ["customerid"]
+            childColumns = ["customerId"]
         )
     ]
 )
@@ -23,5 +22,5 @@ data class JobItemDBModel(
     @ColumnInfo
     val date : String,
     @ColumnInfo
-    val customer : CustomerItemDBModel,
+    val customerId : Int,
 )

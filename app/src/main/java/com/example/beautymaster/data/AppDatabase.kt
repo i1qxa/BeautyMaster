@@ -10,13 +10,10 @@ import com.example.beautymaster.data.job.JobItemDBModel
 import com.example.beautymaster.data.job.JobItemDBModelDao
 import com.example.beautymaster.data.jobBody.JobBodyItemDBModel
 import com.example.beautymaster.data.jobBody.JobBodyItemDBModelDao
-import com.example.beautymaster.data.materials.MaterialItemDBModel
-import com.example.beautymaster.data.materials.MaterialItemDBModelDao
-import com.example.beautymaster.data.materialPriceRegister.MaterialPriceRegisterDao
-import com.example.beautymaster.data.materialPriceRegister.MaterialPriceRegisterItemDBModel
-import com.example.beautymaster.data.service.ServiceItemDBModel
-import com.example.beautymaster.data.service.ServiceItemDBModelDao
-import com.example.beautymaster.data.servicePriceRegister.ServicePriceRegisterDao
+import com.example.beautymaster.data.jobElement.JobElementItemDBModel
+import com.example.beautymaster.data.jobElement.JobElementItemDBModelDao
+import com.example.beautymaster.data.jobElementPriceRegister.JobElementPriceRegisterDao
+import com.example.beautymaster.data.jobElementPriceRegister.JobElementPriceRegisterItemDBModel
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
@@ -25,11 +22,9 @@ import kotlinx.coroutines.internal.synchronized
         CustomerItemDBModel::class,
         JobItemDBModel::class,
         JobBodyItemDBModel::class,
-        MaterialItemDBModel::class,
-        MaterialPriceRegisterItemDBModel::class,
-        ServiceItemDBModel::class,
-        ServicePriceRegisterDao::class,
-    ],
+        JobElementItemDBModel::class,
+        JobElementPriceRegisterItemDBModel::class,
+        ],
     version = 1, exportSchema = false
 )
 
@@ -37,10 +32,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun customerItemDBModelDao(): CustomerItemDBModelDao
     abstract fun jobItemDBModelDao(): JobItemDBModelDao
     abstract fun jobBodyItemDBModelDao(): JobBodyItemDBModelDao
-    abstract fun materialItemDBModelDao(): MaterialItemDBModelDao
-    abstract fun materialPriceRegisterDao(): MaterialPriceRegisterDao
-    abstract fun servicePriceRegisterDao(): ServicePriceRegisterDao
-    abstract fun serviceItemDBModelDao(): ServiceItemDBModelDao
+    abstract fun materialItemDBModelDao(): JobElementItemDBModelDao
+    abstract fun materialPriceRegisterDao(): JobElementPriceRegisterDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null

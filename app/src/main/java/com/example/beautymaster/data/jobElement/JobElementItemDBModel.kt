@@ -1,17 +1,18 @@
-package com.example.beautymaster.data.service
+package com.example.beautymaster.data.jobElement
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.beautymaster.data.materials.MaterialItemDBModel
 
 @Entity
-data class ServiceItemDBModel(
+data class JobElementItemDBModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo
     val id : Int,
     @ColumnInfo
     val name : String,
     @ColumnInfo
-    val listMaterials : List<MaterialItemDBModel>?
+    val isService : Boolean,
+    @ColumnInfo
+    val unitOM : String?,
 )
